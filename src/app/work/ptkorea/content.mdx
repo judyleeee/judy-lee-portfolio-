@@ -1,0 +1,163 @@
+import Callout from "@/components/case/Callout";
+import MetricGrid from "@/components/case/MetricGrid";
+import PatternGrid from "@/components/case/PatternGrid";
+import BeforeAfter from "@/components/case/BeforeAfter";
+import StatBar from "@/components/case/StatBar";
+
+## Problem
+
+After the rebrand, PTKorea had a new name and a new visual identity. But the website was still running on the old system: **seven departments managing content independently, seven disconnected sections, and no one owning the brand end-to-end.**
+
+Three completely different user journeys were broken at the same time.
+
+<PatternGrid
+  patterns={[
+    {
+      label: "Audience 1",
+      title: "Clients",
+      description:
+        "Couldn't find relevant work or figure out which team to contact.",
+    },
+    {
+      label: "Audience 2",
+      title: "Job applicants",
+      description:
+        "Couldn't understand team structure or imagine working there.",
+    },
+    {
+      label: "Audience 3",
+      title: "Internal employees",
+      description:
+        "Spent too long on every update because there was no consistent system.",
+    },
+  ]}
+/>
+
+<Callout>
+  This wasn't a redesign problem. It was a multi-audience UX problem wearing a brand problem's clothes.
+</Callout>
+
+## Research
+
+I started with user research: a **117-person internal survey** and a website visitor analysis to map who was actually using the site and what was failing them.
+
+Three distinct audiences. Three completely different needs.
+
+- **Clients** came to evaluate a potential partner · they needed portfolio clarity and a direct path to the right team.
+- **Job applicants** came to assess company culture · they needed vision, team structure, and a reason to apply.
+- **Competitors** came to benchmark · a fragmented, outdated site was a credibility problem.
+
+The internal survey (n=117) confirmed what the visitor analysis surfaced. Every job applicant surveyed (**100%**) had visited the website during their application process · a non-optional touchpoint, yet full of friction.
+
+<StatBar
+  caption="Top pain points · survey n=117"
+  stats={[
+    { percent: 82.8, label: "Insufficient role and team information" },
+    { percent: 72.4, label: "Slow content updates as a primary barrier" },
+    { percent: 62.1, label: "Work section ranked most useful" },
+  ]}
+/>
+
+<StatBar
+  caption="What they asked for"
+  stats={[
+    { percent: 42.9, label: "More frequent content updates" },
+    { percent: 35.8, label: "Clearer team and role information" },
+    { percent: 21.3, label: "Inconsistent brand expression as a trust issue" },
+  ]}
+/>
+
+<Callout>
+  The root cause was structural. Seven departments owned content independently, which made brand consistency impossible without a dedicated designer on every update. Fixing the visual layer without fixing the system would guarantee failure within six months.
+</Callout>
+
+## Hypothesis
+
+I approached the solution the same way I would approach a design system project. **If I could consolidate the architecture into three clear pillars and build a visual system that non-designers could execute from, brand consistency would become the default, not the exception.**
+
+The obvious alternative was a department-led structure, mirroring the old model. It failed the same test: the AS-IS user journey showed applicants leaving the site mid-session to search for team information on external blogs. Organizing by department would have reproduced that gap.
+
+**3-pillar creative framework**
+
+<PatternGrid
+  patterns={[
+    {
+      label: "Pillar 01 · About",
+      title: "For job applicants",
+      description:
+        "Vision · Service · Brand Story · Culture. Answers 'can I see myself working here?'",
+    },
+    {
+      label: "Pillar 02 · Work",
+      title: "For clients",
+      description:
+        "Department contacts · Portfolio. Most accessed section at 62.1% · structure led by survey signal.",
+    },
+    {
+      label: "Pillar 03 · Contact",
+      title: "For credibility",
+      description:
+        "Blog · Behance · Social. Living proof of the brand, updated by each team.",
+    },
+  ]}
+/>
+
+<Callout>
+  The bet: a creative framework that is hard to use will not be used.
+</Callout>
+
+<BeforeAfter
+  beforeLabel="Before · 7 sections"
+  beforeItems={[
+    "Company",
+    "Service",
+    "Work",
+    "Culture",
+    "Career",
+    "Archive",
+    "Contact",
+  ]}
+  afterLabel="After · 3 sections"
+  afterItems={[
+    "About · Vision · Service · Brand Story · Culture",
+    "Work · Department · Portfolio",
+    "Contact · Blog · Behance · Social",
+  ]}
+/>
+
+## Approach
+
+I used the survey data and competitor research as the creative brief. **Data-driven persuasion was the only way to get seven departments to agree on a single direction.** Opinion alone would not have worked.
+
+The visual system was built like a component library: keyword hierarchy, color tokens, and BI application rules that any team member could follow without a designer in the room. The low-code CMS gave each department ownership of their section while keeping the brand guardrails in place.
+
+## Results
+
+<MetricGrid
+  columns={3}
+  metrics={[
+    { value: "7 → 3", label: "IA sections consolidated" },
+    { value: "Red Dot", label: "Design Award · Web Design" },
+    { value: "iF", label: "Design Award · brand & identity" },
+  ]}
+/>
+
+**Branding.** Two international design awards · the **Red Dot Design Award** (Web Design category) and the **iF Design Award** (brand and identity system) · confirmed that the new identity held up against global design standards.
+
+At the first physical touchpoint · the business card · the brand received consistent, unsolicited praise from clients and employees alike.
+
+**Website.** Seven departments were given a low-code CMS with brand guardrails built in. The system was designed so non-designers could ship content without a designer in every meeting · the dependency that had made the old site inconsistent was removed at the source.
+
+Whether each team fully adopted the system over time was beyond the launch scope I was able to measure · but the architecture to make consistency the default, not the exception, was in place.
+
+## Key Learning
+
+A brand is a product that runs on people. **If the people maintaining it cannot execute consistently, the strategy fails regardless of how good it looks.**
+
+<Callout>
+  The same logic that makes a good design system makes a good brand system: reduce friction for the people executing it, and consistency becomes the default.
+</Callout>
+
+## What I'd Test Next
+
+A content performance dashboard for internal teams so maintainers can see which editorial templates drive the most engagement. That feedback loop would turn the brand system from a static set of rules into something that improves itself over time.

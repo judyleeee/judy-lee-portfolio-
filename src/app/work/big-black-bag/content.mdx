@@ -1,0 +1,129 @@
+import Callout from "@/components/case/Callout";
+import MetricGrid from "@/components/case/MetricGrid";
+import PatternGrid from "@/components/case/PatternGrid";
+
+## Context · Interactive Gift-Giving Quiz UX
+
+**Background.** Winners is one of Canada's largest off-price fashion retailers · and it has no e-commerce site. Every digital touchpoint carries disproportionate weight because there is no other way to test digital behavior, capture intent, or build CRM from this brand.
+
+For the Christmas Big Black Bag campaign, a kiosk-based interactive gift quiz was designed for a 2-day pop-up in Toronto. The kiosk wasn't a campaign asset · it was **the only digital feedback loop the brand had**.
+
+**Business goals:** brand engagement, in-store traffic, and email capture · not direct purchase conversion.
+
+**The experience.** 5 questions guide users to personalized gift ideas. The result screen offers three paths: email results, find a nearby store, or try again. Distributed via on-site kiosk and QR-to-mobile, so the same flow had to hold up across two contexts.
+
+My scope covered **branding**, the **interactive quiz UX/UI**, and the **supporting site**. The physical booth build was handled by a separate team.
+
+## Design Challenges · Three problems found on-site
+
+<PatternGrid
+  patterns={[
+    {
+      label: "Problem 1 · Entry",
+      title: "Users struggle to enter due to a confusing flow",
+      description:
+        "On-site observation across both kiosk locations revealed a pattern. Users made eye contact with the display, then walked past within 3 seconds. The screen offered no immediate signal of what the experience was.",
+    },
+    {
+      label: "Problem 2 · Mid-flow",
+      title: "Drop-off risk mid-flow",
+      description:
+        "Across 2 QA rounds with 20 internal participants: 'Can I go back?' and 'How long does this take?' · both signals of anxiety, not confusion. Anxiety, not difficulty, was driving drop-off intent.",
+    },
+    {
+      label: "Problem 3 · Result screen",
+      title: "Post-completion action hierarchy is unclear",
+      description:
+        "'Signing up feels like too much' and 'I want to see other results' · users weren't confused, they were overwhelmed. Three business goals shown simultaneously: email capture, store direction, re-engagement.",
+    },
+  ]}
+/>
+
+<Callout>
+  With no clear hierarchy, every action felt equally weighted. When everything is a priority, nothing gets chosen.
+</Callout>
+
+## Hypothesis · Three parallel bets
+
+Each friction point mapped to a single behavioral hypothesis · framed before design, validated through live behavior and internal QA.
+
+<PatternGrid
+  patterns={[
+    {
+      label: "H1 · Entry",
+      title: "Value-first communicates before asking",
+      description:
+        "If the entry screen communicates value before asking for any action, engagement rate will be higher than a question-first approach. Proof: 46% completion with zero incentive structure.",
+    },
+    {
+      label: "H2 · Mid-flow",
+      title: "Control neutralizes anxiety",
+      description:
+        "If users feel in control of their progress, completion rate will increase. Proof: QA feedback shifted from 'Can I go back?' to 'Love that I can go back.'",
+    },
+    {
+      label: "H3 · Post-completion",
+      title: "Clear CTA hierarchy drives next steps",
+      description:
+        "If post-completion actions are clearly prioritized, users will take meaningful next steps. Resolved after adding 'Find another gift' as the re-engagement lead.",
+    },
+  ]}
+/>
+
+## Solution 1 · Cover & Progress UX
+
+**The core hesitation: not knowing what this is.** One-line copy communicates purpose instantly. A single CTA lowers the cost of starting.
+
+**Three design decisions targeted the entry drop-off:**
+
+- **EN/FR toggle** for Canadian bilingual context
+- **UX writing** that places purpose and value in one line
+- **Popup, not new tab**, to prevent window-close issues on the kiosk hardware
+
+## Solution 2 & 3 · CTA hierarchy
+
+**"Send this to me"** leads as the primary CTA · it's what the user came for. Email input unlocks the subscription prompt naturally · business goal served as a consequence of value, not a gate. **"Find another gift"** drives re-engagement without dead-ending the flow.
+
+Mid-quiz, the progress bar and back-navigation returned control to the user · resolving the anxiety named in QA. The flow itself dropped from **6 to 5 steps** · every removed step was a removed drop-off opportunity.
+
+## Outcome · 46% completion · 2-day pop-up · no incentives
+
+<MetricGrid
+  metrics={[
+    { value: "46%", label: "Completion rate\nvoluntary · no incentive" },
+    { value: "300+", label: "Unique sessions\nover 2 days" },
+    { value: "1,225", label: "Page views\nacross the flow" },
+    { value: "25%", label: "Emailed their results\nopt-in CRM capture" },
+  ]}
+/>
+
+**Quantitative**
+
+- **46% completion rate** · voluntary · no incentive · no purchase path. Achieved by reducing the flow from 6 to 5 steps and lowering the cost of starting.
+- **300+ sessions · 1,225 page views** over 2 days, in a walk-by pop-up with no staff direction · the screen itself had to earn every tap.
+- **25% email opt-in** · 1-in-4 completers emailed their results. For a retailer with no e-commerce, this is a rare digital signal tied directly to in-store purchase intent.
+
+**Qualitative · QA-validated**
+
+- **Resilience in retail.** Despite cold weather and on-site wait times later in the day, the majority of users finished the quiz.
+- **Anxiety neutralized.** QA feedback shifted from "Can I go back?" to "Love that I can go back" · the progress bar and back-navigation directly resolved the named friction.
+
+## What I'd Test Next · From a 2-day pop-up to a learning system
+
+<Callout>
+  The 25% email opt-in is not just a CRM number · it's a feedback loop a model could learn from within a single campaign cycle.
+</Callout>
+
+- **Integrate AI-powered personalization into the quiz logic.** Product recommendations dynamically ranked by real-time inventory and seasonal performance data, not static rules. Each session feeds the next.
+- **Extend the physical-to-digital journey.** Next iteration would follow users from in-store kiosk → email → store visit, measuring the full loop.
+- **Design analytics structure upfront.** Drop-off tracking per step, session replay on consent, A/B on the cover screen copy.
+
+## Reflection
+
+**What I'd do differently.** I'd define the design system before the first screen · kiosk, mobile, and web each needed different component structures, and resolving that mid-build cost time that could have been spent on the edges of the experience.
+
+**What I learned.**
+
+- **Physical constraints were the brief.** Kiosk hardware, short dwell time, and bilingual requirements were both the limitation and the design brief · the system was shaped by what the environment made impossible, not by what was visually preferred.
+- **Anxiety, not difficulty, drives drop-off.** Users didn't struggle with the quiz · they feared commitment to an unknown flow. The fix was control, not simplification.
+- **When business goals compete, users choose none.** Three equally-weighted CTAs produced paralysis · sequencing them by user need first, business goal second, turned the result screen into a funnel instead of a menu.

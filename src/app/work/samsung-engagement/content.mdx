@@ -1,0 +1,117 @@
+import Callout from "@/components/case/Callout";
+import MetricGrid from "@/components/case/MetricGrid";
+import PatternGrid from "@/components/case/PatternGrid";
+
+## Problem
+
+Samsung.com's Manuals & Downloads page served millions of users globally · a post-purchase touchpoint where brand loyalty either holds or fractures. **At scale, it was fracturing.**
+
+Most users were abandoning self-service and escalating to support. Every failed lookup converted into a support contact · a downstream cost compounding into support overhead, churn risk, and eroded brand trust at the exact moment that determines long-term loyalty.
+
+## Research
+
+A dedicated UX Research team surfaced the structural mismatch driving abandonment. I partnered with them to translate the findings into design decisions.
+
+<Callout>
+  The system required a <strong>product code</strong> (e.g. SM-F721BLBGEUB) to surface any manual. Users arrived knowing a <strong>product name</strong> at best · often only a <strong>category name</strong>. The gap between user vocabulary and system architecture was the real failure.
+</Callout>
+
+This split ran deeper across product lines: mobile users typically arrived with a product name ("Flip4", "A53") and could search directly. TV and appliance users often arrived with only a category name ("Smart TV", "fridge"). The existing UI didn't provide a guided selection path. Both populations were failing, but for structurally different reasons.
+
+**Four recurring failure modes mapped to this gap:**
+
+- 40+ seconds and multiple clicks to reach a single manual
+- Unclear differentiation between near-identical variants
+- Confusing category taxonomy across product lines
+- Thumbnails that failed to confirm the right model
+
+> "Each one looks almost the same · I can't tell which is mine."
+> — User research · Manuals & Downloads
+
+## Hypothesis
+
+The surface story was "navigation is broken." The deeper pattern was different · every pain point traced back to one moment: users couldn't confirm they were looking at *their* product.
+
+<Callout>
+  Users didn't need more options or smarter search · they needed <strong>confirmation</strong> at the decision moment. Reduce cognitive load there · not before it · and completion should rise.
+</Callout>
+
+**Alternatives considered and ruled out**
+
+- A pure search-only fix · ignores users who don't know the model name
+- A deeper taxonomy · adds clicks, worsens the 40s metric
+
+The path forward had to serve both audiences in parallel.
+
+## Approach
+
+One redesign · three named UI patterns working in parallel. Each pattern targeted a specific failure mode uncovered in research.
+
+<PatternGrid
+  patterns={[
+    {
+      label: "Pattern 01 · Fast path",
+      title: "Simplified Search & Predictive Hints",
+      description:
+        "Users type a product name · autocomplete surfaces the right model with imagery · cutting trial-and-error for users who know what they own.",
+    },
+    {
+      label: "Pattern 02 · Guided path",
+      title: "Hierarchical Category Selection",
+      description:
+        "Category taxonomy rebuilt so every step narrows confidently · scalable across Samsung's full global catalog without custom work per product line.",
+    },
+    {
+      label: "Pattern 03 · Verification",
+      title: "Quick-Verify UI",
+      description:
+        "Product imagery shown at the selection moment · confirming 'this is mine' before the user commits · resolving near-identical variants at point of decision.",
+    },
+    {
+      label: "Constraint",
+      title: "Samsung Design Guidelines compliance",
+      description:
+        "Reused existing components wherever possible · kept implementation consistent and minimized dev overhead while introducing the new interaction patterns.",
+    },
+  ]}
+/>
+
+**Collaboration.** Partnered with the UX Research team on discovery and validation · handed off final specs to engineering via Zeplin with annotated interaction states and component mappings to the Samsung Design System.
+
+## Results
+
+Measured post-launch against the live baseline.
+
+<MetricGrid
+  columns={5}
+  metrics={[
+    { value: "+19%", label: "User engagement" },
+    { value: "40s → 15s", label: "Manual lookup time" },
+    { value: "+15%", label: "Self-service resolution" },
+    { value: "+33%", label: "CSAT improvement" },
+    { value: "+45%", label: "NPS improvement · press reported" },
+  ]}
+/>
+
+Post-launch qualitative feedback cited visual confirmation as the primary driver of increased confidence. Users reported navigating with less friction and greater certainty they had selected the right product.
+
+## Key Learning
+
+<Callout>
+  Research revealed identity confusion, not search intent.
+</Callout>
+
+Reframing the problem as a moment of confirmation · rather than a navigation failure · was what changed the design direction.
+
+Small craft decisions · visual hierarchy, instant verification cues · compound into measurable business outcomes when they land at the right moment. The real leverage wasn't restructuring the navigation. It was inserting a confirmation signal at the precise point where users were abandoning.
+
+> Verification-first design outperforms navigation-first design when the user's real problem is identity confirmation · not discovery.
+
+## What I'd Test Next
+
+**Honest limitation.** Validation happened post-launch against behavioral data · not through pre-launch usability testing with real users. Some design choices weren't fully de-risked before ship.
+
+Next iteration would:
+
+- Run moderated usability sessions earlier to validate the taxonomy before implementation
+- Layer in proactive model-detection (via serial number or purchase history) to collapse selection time toward zero for returning users
