@@ -5,7 +5,7 @@ import Content from "./content.mdx";
 export const metadata: Metadata = {
   title: "Winners Big Black Bag — Judy Lee",
   description:
-    "46% 완료율. 인센티브 없음. 이커머스 없음. 토론토 2일 크리스마스 팝업을 위해 설계된 키오스크 기반 선물 추천 퀴즈.",
+    "46% 완료율. 보상 없음. 이커머스 없음. 토론토 2일 크리스마스 팝업을 위해 설계된 키오스크 기반 선물 추천 퀴즈.",
 };
 
 export default function PageKR() {
@@ -13,8 +13,8 @@ export default function PageKR() {
     <>
       <CaseStudyHero
         label="케이스 스터디 02 · 인터랙티브 퀴즈 UX"
-        title="Winners Big Black Bag: 46% 완료율, 인센티브 없이."
-        subtitle="토론토 2일 크리스마스 팝업을 위해 설계된 키오스크 기반 선물 추천 퀴즈. 자발적 참여 · 보상 없음 · 구매 경로 없음 · 오직 UX가 다음 탭을 벌어내는 조건."
+        title="Winners Big Black Bag: 46% 완료율, 보상 없이."
+        subtitle="토론토 2일 크리스마스 팝업을 위해 설계된 키오스크 기반 선물 추천 퀴즈. 자발적 참여 · 보상 없음 · 구매 경로 없음 · UX 자체가 사용자의 다음 행동을 이끌어야 하는 조건."
         meta={[
           {
             label: "역할",

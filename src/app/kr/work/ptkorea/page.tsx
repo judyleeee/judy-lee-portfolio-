@@ -13,7 +13,7 @@ export default function PageKR() {
     <>
       <CaseStudyHero
         label="케이스 스터디 03 · 브랜드 전략"
-        title="PTKorea: 브랜드를 UX 문제처럼 다뤘습니다. 실제로 그랬으니까."
+        title="PTKorea: 브랜드 문제로 보였지만 · 실제로는 UX 문제였습니다."
         subtitle="117명 내부 설문 · 3-Pillar 크리에이티브 프레임워크 · 로코드 CMS로 파편화된 브랜드를 비디자이너가 실행 가능한 시스템으로 통합한 케이스. Red Dot · iF Design Award 수상."
         meta={[
           { label: "역할", value: "리드 디자이너" },
