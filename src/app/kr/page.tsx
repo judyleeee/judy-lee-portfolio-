@@ -62,7 +62,7 @@ export default function HomeKR() {
             maxWidth: 560,
           }}
         >
-          Samsung과 Edelman에서 쌓은 크래프트를 바탕으로 · 측정 가능한 임팩트를
+          Samsung과 Edelman에서 다져온 디자인 감각을 바탕으로 · 측정 가능한 임팩트를
           만드는 AI 네이티브 제품 경험을 설계합니다.
         </p>
       </header>
