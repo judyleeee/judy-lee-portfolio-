@@ -1,6 +1,12 @@
 import Callout from "@/components/case/Callout";
 import MetricGrid from "@/components/case/MetricGrid";
 import PatternGrid from "@/components/case/PatternGrid";
+import CaseImage from "@/components/case/CaseImage";
+
+<CaseImage
+  src="/images/samsungmanualpage.jpg"
+  alt="Samsung.com Manuals & Downloads redesign"
+/>
 
 ## Problem
 
@@ -27,6 +33,13 @@ This split ran deeper across product lines: mobile users typically arrived with 
 
 > "Each one looks almost the same · I can't tell which is mine."
 > — User research · Manuals & Downloads
+
+<CaseImage
+  src="/images/samsung-engagement-asis.png"
+  alt="Samsung.com Manuals page · before redesign"
+  label="AS-IS"
+  caption="기존 Search Samsung Support 화면"
+/>
 
 ## Hypothesis
 
@@ -78,9 +91,45 @@ One redesign · three named UI patterns working in parallel. Each pattern target
 
 **Collaboration.** Partnered with the UX Research team on discovery and validation · handed off final specs to engineering via Zeplin with annotated interaction states and component mappings to the Samsung Design System.
 
+<CaseImage
+  src="/images/samsung-engagement-tobe-flow.png"
+  alt="Final redesign · end-to-end user flow"
+  label="TO-BE · Full Flow"
+  caption="Manuals & Downloads → Enter model code → Select category → Step 2 select product → Additional Information"
+/>
+
+<CaseImage
+  src="/images/samsung-engagement-pattern-search.png"
+  alt="Simplified Search and Hierarchical Category Selection"
+  label="Pattern 01 · 02"
+  caption="Simplified Search & Predictive Hints · Hierarchical Category Selection"
+/>
+
+<CaseImage
+  src="/images/samsung-engagement-wireframe.png"
+  alt="Wireframe sketches · early ideation"
+  label="Process · Wireframes"
+  caption="초기 아이데이션 · 핸드드로잉 와이어프레임"
+/>
+
 ## Results
 
 Measured post-launch against the live baseline.
+
+<div className="grid md:grid-cols-2" style={{ gap: "var(--space-4)", margin: "var(--space-6) 0", maxWidth: 920 }}>
+  <CaseImage
+    src="/images/samsung-engagement-result-before.png"
+    alt="Before redesign · friction and abandonment"
+    label="Before · 40+ sec"
+    caption="Friction · Inefficiency · Bottleneck"
+  />
+  <CaseImage
+    src="/images/samsung-engagement-result-after.png"
+    alt="After redesign · faster, confirmed, self-served"
+    label="After · 15 sec"
+    caption="Redesigned flow · 25s 단축 · 자가해결"
+  />
+</div>
 
 <MetricGrid
   columns={5}

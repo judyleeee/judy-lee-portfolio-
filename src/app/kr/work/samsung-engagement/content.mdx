@@ -1,0 +1,166 @@
+import Callout from "@/components/case/Callout";
+import MetricGrid from "@/components/case/MetricGrid";
+import PatternGrid from "@/components/case/PatternGrid";
+import CaseImage from "@/components/case/CaseImage";
+
+<CaseImage
+  src="/images/samsungmanualpage.jpg"
+  alt="Samsung.com 매뉴얼 & 다운로드 리디자인"
+/>
+
+## 문제
+
+Samsung.com의 매뉴얼 & 다운로드 페이지는 전 세계 수백만 명이 들르는 구매 이후 접점입니다. 이 순간에 브랜드 충성도가 지켜지거나 무너집니다. **규모가 커질수록 무너지고 있었습니다.**
+
+대부분의 사용자가 자가 해결을 포기하고 지원 센터로 넘어갔습니다. 매뉴얼 검색 실패 하나하나가 지원 요청으로 이어졌습니다 · 이는 지원 부담 · 이탈 위험 · 장기 충성도를 결정하는 바로 그 시점에서의 브랜드 신뢰 훼손으로 누적되었습니다.
+
+## 리서치
+
+별도 UX 리서치 팀이 이탈을 만드는 구조적 불일치를 밝혀냈고 · 저는 이 발견을 디자인 의사결정으로 번역하는 일을 맡았습니다.
+
+<Callout>
+  시스템은 매뉴얼을 찾기 위해 <strong>제품 코드</strong>(예: SM-F721BLBGEUB)를 요구했습니다. 반면 사용자는 <strong>제품명</strong>을 기억하는 경우가 대부분이었고 · 때로는 <strong>카테고리명</strong>만 알고 찾아왔습니다. 사용자 언어와 시스템 구조 사이의 간극이 진짜 실패 지점이었습니다.
+</Callout>
+
+이 간극은 제품군별로 더 깊게 갈라졌습니다. 모바일 사용자는 대개 제품명("Flip4", "A53")을 알고 직접 검색할 수 있었지만 · TV나 가전 사용자는 카테고리명("스마트 TV", "냉장고")만 쥐고 찾아왔습니다. 기존 UI는 이 두 유형 모두에게 선택을 안내하지 못했습니다.
+
+**반복적으로 나타난 네 가지 실패 모드**
+
+- 매뉴얼 한 건 찾는 데 40초 이상 · 여러 번 클릭
+- 유사한 모델 간 구분이 어려움
+- 제품군에 걸쳐 일관성 없는 분류 체계
+- 내 모델이 맞는지 확인할 수 없는 썸네일
+
+> "다 똑같이 생겨서 · 내 것이 뭔지 알 수가 없어요."
+> — 사용자 리서치 · 매뉴얼 & 다운로드
+
+<CaseImage
+  src="/images/samsung-engagement-asis.png"
+  alt="Samsung.com 매뉴얼 페이지 · 리디자인 전"
+  label="AS-IS"
+  caption="기존 Search Samsung Support 화면"
+/>
+
+## 가설
+
+겉으로 드러난 이야기는 "탐색이 망가졌다"였습니다. 깊이 들여다본 패턴은 달랐습니다 · 모든 통점이 한 가지 순간으로 수렴했습니다. 사용자는 *자기 제품*을 맞게 골랐는지 확인할 수 없었습니다.
+
+<Callout>
+  사용자에게 필요한 것은 더 많은 옵션이나 똑똑한 검색이 아니라 · 결정 순간의 <strong>확인</strong>이었습니다. 그 지점에서 인지 부하를 줄이면 · 그 이전이 아니라 · 완료율은 올라갑니다.
+</Callout>
+
+**검토 후 기각한 대안**
+
+- 검색만으로 푸는 접근 · 모델명을 모르는 사용자를 놓침
+- 분류 체계를 더 세분화 · 클릭이 늘어나 40초 지표가 악화
+
+선택한 방향은 두 사용자 층을 동시에 만족시키는 것이었습니다.
+
+## 접근
+
+하나의 리디자인 · 세 개의 UI 패턴이 병렬로 작동합니다. 각 패턴은 리서치에서 나온 특정 실패 모드를 정조준합니다.
+
+<PatternGrid
+  patterns={[
+    {
+      label: "패턴 01 · 빠른 경로",
+      title: "단순화된 검색과 예측 힌트",
+      description:
+        "사용자가 제품명을 입력하면 · 이미지와 함께 정확한 모델이 자동 완성으로 표시됩니다 · 모델을 아는 사용자의 시행착오를 줄입니다.",
+    },
+    {
+      label: "패턴 02 · 안내 경로",
+      title: "계층형 카테고리 선택",
+      description:
+        "한 단계마다 확신을 주도록 분류 체계를 재구성 · Samsung 전체 글로벌 카탈로그에 확장 가능하게 설계했습니다.",
+    },
+    {
+      label: "패턴 03 · 확인",
+      title: "빠른 확인 UI",
+      description:
+        "선택 직전에 제품 이미지를 제공 · '내 것이 맞다'는 확인을 결정 순간에 붙입니다 · 비슷한 모델 간 혼동이 그 지점에서 해소됩니다.",
+    },
+    {
+      label: "제약",
+      title: "Samsung Design Guidelines 준수",
+      description:
+        "가능한 모든 지점에서 기존 컴포넌트를 재사용 · 구현 일관성을 유지하고 개발 오버헤드를 줄이면서 새 인터랙션 패턴을 도입했습니다.",
+    },
+  ]}
+/>
+
+**협업.** 디스커버리와 검증 단계에서 UX 리서치 팀과 파트너십 · 최종 스펙은 Zeplin으로 엔지니어링에 전달했고 · 인터랙션 상태를 주석으로 달고 Samsung Design System 컴포넌트와 매핑했습니다.
+
+<CaseImage
+  src="/images/samsung-engagement-tobe-flow.png"
+  alt="최종 리디자인 · 엔드투엔드 사용자 플로우"
+  label="TO-BE · Full Flow"
+  caption="매뉴얼 & 다운로드 → 모델 코드 입력 → 카테고리 선택 → 2단계 제품 선택 → 추가 정보"
+/>
+
+<CaseImage
+  src="/images/samsung-engagement-pattern-search.png"
+  alt="단순화된 검색과 계층형 카테고리 선택"
+  label="패턴 01 · 02"
+  caption="단순화된 검색과 예측 힌트 · 계층형 카테고리 선택"
+/>
+
+<CaseImage
+  src="/images/samsung-engagement-wireframe.png"
+  alt="와이어프레임 스케치 · 초기 아이데이션"
+  label="Process · 와이어프레임"
+  caption="초기 아이데이션 · 핸드드로잉 와이어프레임"
+/>
+
+## 결과
+
+라이브 베이스라인과 비교하여 출시 후 측정.
+
+<div className="grid md:grid-cols-2" style={{ gap: "var(--space-4)", margin: "var(--space-6) 0", maxWidth: 920 }}>
+  <CaseImage
+    src="/images/samsung-engagement-result-before.png"
+    alt="리디자인 전 · 마찰과 이탈"
+    label="Before · 40초 이상"
+    caption="마찰 · 비효율 · 병목"
+  />
+  <CaseImage
+    src="/images/samsung-engagement-result-after.png"
+    alt="리디자인 후 · 빠르고, 확인되며, 자가 해결"
+    label="After · 15초"
+    caption="리디자인 플로우 · 25초 단축 · 자가 해결"
+  />
+</div>
+
+<MetricGrid
+  columns={5}
+  metrics={[
+    { value: "+19%", label: "사용자 참여도" },
+    { value: "40s → 15s", label: "매뉴얼 탐색 시간" },
+    { value: "+15%", label: "자가 해결률" },
+    { value: "+33%", label: "CSAT 향상" },
+    { value: "+45%", label: "NPS 향상 · 보도 보고" },
+  ]}
+/>
+
+출시 후 정성적 피드백은 시각적 확인이 자신감 상승의 주된 요인이라고 지목했습니다. 사용자들은 마찰이 줄고 · 맞는 제품을 골랐다는 확신이 생긴다고 답했습니다.
+
+## 핵심 학습
+
+<Callout>
+  리서치가 드러낸 것은 탐색 의도가 아니라 "정체성 혼란"이었습니다.
+</Callout>
+
+문제를 "탐색 실패"가 아닌 "확인의 순간"으로 재정의한 것이 방향을 바꾼 결정적 지점이었습니다.
+
+작은 크래프트 결정 · 시각 위계 · 즉각적인 확인 신호 · 이것들이 올바른 순간에 자리 잡을 때 측정 가능한 비즈니스 성과로 쌓입니다. 진짜 지렛대는 탐색 구조를 재편하는 일이 아니라 · 사용자가 이탈하던 바로 그 지점에 확인 신호를 밀어 넣는 일이었습니다.
+
+> 사용자의 진짜 문제가 "탐색"이 아니라 "확인"일 때 · 확인 우선 디자인은 탐색 우선 디자인을 이깁니다.
+
+## 다음에 시험할 것
+
+**솔직한 한계.** 검증은 출시 후 행동 데이터로 이루어졌습니다 · 실제 사용자와의 출시 전 사용성 테스트가 아니었습니다. 일부 디자인 결정은 출시 전 충분히 검증되지 못했습니다.
+
+다음 반복에서는,
+
+- 출시 전 중재 사용성 세션을 먼저 돌려 분류 체계를 검증
+- 시리얼 번호나 구매 이력을 활용한 선제적 모델 감지를 얹어 · 재방문 사용자의 선택 시간을 거의 0에 가깝게 줄이는 방향

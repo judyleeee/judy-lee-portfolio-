@@ -1,6 +1,29 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Nav() {
+  const pathname = usePathname();
+  const isKR = pathname?.startsWith("/kr") ?? false;
+
+  // Generate the counterpart path for the language toggle
+  const enPath = isKR
+    ? pathname === "/kr"
+      ? "/"
+      : pathname.replace(/^\/kr/, "")
+    : pathname;
+  const krPath = isKR
+    ? pathname
+    : pathname === "/"
+      ? "/kr"
+      : `/kr${pathname}`;
+
+  const t = {
+    about: isKR ? "어바웃" : "About",
+    contact: isKR ? "연락" : "Contact",
+  };
+
   return (
     <nav
       className="sticky top-0 z-50 bg-[var(--color-bg)]"
@@ -17,7 +40,7 @@ export default function Nav() {
         }}
       >
         <Link
-          href="/"
+          href={isKR ? "/kr" : "/"}
           className="uppercase"
           style={{
             fontSize: "var(--text-small)",
@@ -31,10 +54,52 @@ export default function Nav() {
 
         <div
           className="flex items-center"
-          style={{ gap: "var(--space-6)" }}
+          style={{ gap: "var(--space-5)" }}
         >
+          {/* Language toggle */}
+          <div
+            className="inline-flex items-center"
+            style={{ gap: "var(--space-2)" }}
+          >
+            <Link
+              href={enPath || "/"}
+              style={{
+                fontSize: "var(--text-small)",
+                fontWeight: "var(--weight-medium)",
+                color: !isKR
+                  ? "var(--color-text-primary)"
+                  : "var(--color-text-tertiary)",
+                transition: "color var(--transition-fast)",
+              }}
+            >
+              EN
+            </Link>
+            <span
+              style={{
+                fontSize: "var(--text-small)",
+                color: "var(--color-text-tertiary)",
+                userSelect: "none",
+              }}
+            >
+              ·
+            </span>
+            <Link
+              href={krPath}
+              style={{
+                fontSize: "var(--text-small)",
+                fontWeight: "var(--weight-medium)",
+                color: isKR
+                  ? "var(--color-text-primary)"
+                  : "var(--color-text-tertiary)",
+                transition: "color var(--transition-fast)",
+              }}
+            >
+              KR
+            </Link>
+          </div>
+
           <Link
-            href="/about"
+            href={isKR ? "/kr/about" : "/about"}
             className="transition-colors hover:text-[var(--color-text-primary)]"
             style={{
               fontSize: "var(--text-small)",
@@ -42,7 +107,7 @@ export default function Nav() {
               color: "var(--color-text-secondary)",
             }}
           >
-            About
+            {t.about}
           </Link>
           <a
             href="mailto:jihyunlee719@gmail.com"
@@ -53,7 +118,7 @@ export default function Nav() {
               color: "var(--color-text-secondary)",
             }}
           >
-            Contact
+            {t.contact}
           </a>
         </div>
       </div>

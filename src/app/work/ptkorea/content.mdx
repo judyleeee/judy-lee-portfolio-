@@ -3,6 +3,12 @@ import MetricGrid from "@/components/case/MetricGrid";
 import PatternGrid from "@/components/case/PatternGrid";
 import BeforeAfter from "@/components/case/BeforeAfter";
 import StatBar from "@/components/case/StatBar";
+import CaseImage from "@/components/case/CaseImage";
+
+<CaseImage
+  src="/images/rebrand-website.jpg"
+  alt="PTKorea rebranding and website redesign"
+/>
 
 ## Problem
 
@@ -36,6 +42,13 @@ Three completely different user journeys were broken at the same time.
 <Callout>
   This wasn't a redesign problem. It was a multi-audience UX problem wearing a brand problem's clothes.
 </Callout>
+
+<CaseImage
+  src="/images/ptk-before-website.png"
+  alt="Before · Old Website"
+  label="Before · Old Website"
+  caption="기존 웹사이트 스크린샷"
+/>
 
 ## Research
 
@@ -127,6 +140,13 @@ The obvious alternative was a department-led structure, mirroring the old model.
 
 ## Approach
 
+<CaseImage
+  src="/images/ptk-brand-guidelines.png"
+  alt="Brand Guidelines · Design System"
+  label="Brand Guidelines · Design System"
+  caption="브랜드 가이드라인 · 컴포넌트 시스템"
+/>
+
 I used the survey data and competitor research as the creative brief. **Data-driven persuasion was the only way to get seven departments to agree on a single direction.** Opinion alone would not have worked.
 
 The visual system was built like a component library: keyword hierarchy, color tokens, and BI application rules that any team member could follow without a designer in the room. The low-code CMS gave each department ownership of their section while keeping the brand guardrails in place.
@@ -142,6 +162,17 @@ The visual system was built like a component library: keyword hierarchy, color t
   ]}
 />
 
+<div className="grid md:grid-cols-2" style={{ gap: "var(--space-4)", margin: "var(--space-6) 0", maxWidth: 920 }}>
+  <CaseImage
+    src="/images/ptk-brand-identity_1.png"
+    alt="Brand Identity 1"
+  />
+  <CaseImage
+    src="/images/ptk-brand-identity_2.png"
+    alt="Brand Identity 2"
+  />
+</div>
+
 **Branding.** Two international design awards · the **Red Dot Design Award** (Web Design category) and the **iF Design Award** (brand and identity system) · confirmed that the new identity held up against global design standards.
 
 At the first physical touchpoint · the business card · the brand received consistent, unsolicited praise from clients and employees alike.
@@ -149,6 +180,18 @@ At the first physical touchpoint · the business card · the brand received cons
 **Website.** Seven departments were given a low-code CMS with brand guardrails built in. The system was designed so non-designers could ship content without a designer in every meeting · the dependency that had made the old site inconsistent was removed at the source.
 
 Whether each team fully adopted the system over time was beyond the launch scope I was able to measure · but the architecture to make consistency the default, not the exception, was in place.
+
+<CaseImage
+  src="/images/ptk-website-after_1.png"
+  alt="Website After"
+  label="Website · After"
+  caption="리뉴얼된 웹사이트"
+/>
+
+<div className="grid md:grid-cols-2" style={{ gap: "var(--space-4)", margin: "var(--space-6) 0", maxWidth: 920 }}>
+  <CaseImage src="/images/ptk-website-after_2.png" alt="Website After 2" />
+  <CaseImage src="/images/ptk-website-after_3.png" alt="Website After 3" />
+</div>
 
 ## Key Learning
 

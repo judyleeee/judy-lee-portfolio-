@@ -7,6 +7,7 @@ import type { Project } from "@/lib/projects";
 
 type Props = {
   project: Project;
+  locale?: "en" | "kr";
 };
 
 type AccordionRowData = {
@@ -14,14 +15,21 @@ type AccordionRowData = {
   value: string;
 };
 
-export default function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project, locale = "en" }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const labels =
+    locale === "kr"
+      ? { role: "역할", context: "맥락", timeline: "기간", tags: "태그", cta: "케이스스터디 보기 →" }
+      : { role: "Role", context: "Context", timeline: "Timeline", tags: "Tags", cta: "View Case Study →" };
+
+  const basePath = locale === "kr" ? "/kr/work" : "/work";
+
   const rows: AccordionRowData[] = [
-    { label: "Role", value: project.role },
-    { label: "Context", value: project.context },
-    { label: "Timeline", value: project.timeline },
-    { label: "Tags", value: project.tags.join(" · ") },
+    { label: labels.role, value: project.role },
+    { label: labels.context, value: project.context },
+    { label: labels.timeline, value: project.timeline },
+    { label: labels.tags, value: project.tags.join(" · ") },
   ];
 
   return (
@@ -50,7 +58,7 @@ export default function ProjectCard({ project }: Props) {
           {project.year}
         </span>
 
-        <Link href={`/work/${project.caseStudySlug}`} className="inline-block">
+        <Link href={`${basePath}/${project.caseStudySlug}`} className="inline-block">
           <h2
             className="transition-opacity hover:opacity-60"
             style={{
@@ -151,7 +159,7 @@ export default function ProjectCard({ project }: Props) {
         </div>
 
         <Link
-          href={`/work/${project.caseStudySlug}`}
+          href={`${basePath}/${project.caseStudySlug}`}
           className="inline-flex items-center self-start transition-opacity hover:opacity-50"
           style={{
             gap: "var(--space-2)",
@@ -163,13 +171,13 @@ export default function ProjectCard({ project }: Props) {
             paddingBottom: 2,
           }}
         >
-          View Case Study →
+          {labels.cta}
         </Link>
       </div>
 
       {/* ─── Right (Image) ─── */}
       <Link
-        href={`/work/${project.caseStudySlug}`}
+        href={`${basePath}/${project.caseStudySlug}`}
         className="order-1 md:order-2 relative overflow-hidden block"
         style={{
           borderRadius: "var(--radius-sm)",
