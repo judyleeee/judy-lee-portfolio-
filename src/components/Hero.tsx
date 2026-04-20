@@ -32,10 +32,10 @@ export default function Hero() {
           maxWidth: "860px",
         }}
       >
-        I spent 7 years designing what things look like.
+        7 years of moving from visual to UX, sense to data.
         <br />
         <em style={{ fontStyle: "italic", fontWeight: "var(--weight-light)" }}>
-          Now I design how they work.
+          Now AI-native, with AI as a partner.
         </em>
       </h1>
 

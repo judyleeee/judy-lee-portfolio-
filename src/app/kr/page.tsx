@@ -44,12 +44,12 @@ export default function HomeKR() {
             maxWidth: 860,
           }}
         >
-          7년간 겉모습을 디자인했습니다.
+          7년 동안 비주얼에서 UX로 · 감각에서 데이터로 확장했습니다.
           <br />
           <em
             style={{ fontStyle: "italic", fontWeight: "var(--weight-light)" }}
           >
-            이제는 작동 방식을 디자인합니다.
+            이제는 AI 네이티브까지 · AI를 파트너 삼아 디자인합니다.
           </em>
         </h1>
 
