@@ -5,8 +5,10 @@ type Props = {
   alt: string;
   label?: string;
   caption?: string;
-  width?: number;
-  height?: number;
+  /** 컨테이너 고정 종횡비. 기본 16/10. 같은 페이지의 모든 이미지 높이를 통일하기 위함 */
+  ratio?: string;
+  /** 이미지가 잘리지 않도록 contain(기본) · 화면 꽉 채우되 잘릴 수 있음은 cover */
+  fit?: "contain" | "cover";
 };
 
 export default function CaseImage({
@@ -14,8 +16,8 @@ export default function CaseImage({
   alt,
   label,
   caption,
-  width = 1400,
-  height = 900,
+  ratio = "16 / 10",
+  fit = "contain",
 }: Props) {
   return (
     <figure
@@ -28,6 +30,7 @@ export default function CaseImage({
         style={{
           position: "relative",
           width: "100%",
+          aspectRatio: ratio,
           background: "var(--color-bg-subtle)",
           borderRadius: "var(--radius-sm)",
           overflow: "hidden",
@@ -36,12 +39,9 @@ export default function CaseImage({
         <Image
           src={src}
           alt={alt}
-          width={width}
-          height={height}
+          fill
           style={{
-            width: "100%",
-            height: "auto",
-            display: "block",
+            objectFit: fit,
           }}
           sizes="(max-width: 920px) 100vw, 920px"
         />
