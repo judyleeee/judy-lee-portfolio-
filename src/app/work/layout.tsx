@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NextCaseCard from "@/components/NextCaseCard";
 import CaseTOC from "@/components/CaseTOC";
+import FadeInSection from "@/components/FadeInSection";
 
 export default function WorkLayout({
   children,
@@ -10,8 +11,10 @@ export default function WorkLayout({
   return (
     <>
       <CaseTOC />
-      {children}
-      <NextCaseCard />
+      <FadeInSection>{children}</FadeInSection>
+      <FadeInSection>
+        <NextCaseCard />
+      </FadeInSection>
       <div
         className="mx-auto w-full"
         style={{

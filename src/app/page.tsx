@@ -1,13 +1,17 @@
 import Hero from "@/components/Hero";
 import ImpactStrip from "@/components/ImpactStrip";
 import ProjectCard from "@/components/ProjectCard";
+import FadeInSection from "@/components/FadeInSection";
 import { visibleProjects } from "@/lib/projects";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <ImpactStrip />
+
+      <FadeInSection>
+        <ImpactStrip />
+      </FadeInSection>
 
       <section
         className="mx-auto w-full"
@@ -17,8 +21,10 @@ export default function Home() {
         }}
       >
         <div className="flex flex-col">
-          {visibleProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {visibleProjects.map((project, i) => (
+            <FadeInSection key={project.id} delay={i * 0.08}>
+              <ProjectCard project={project} />
+            </FadeInSection>
           ))}
         </div>
       </section>

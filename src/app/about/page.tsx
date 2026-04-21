@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import FadeInSection from "@/components/FadeInSection";
 
 export const metadata: Metadata = {
   title: "About — Judy Lee",
@@ -106,6 +107,7 @@ export default function AboutPage() {
       </div>
 
       {/* ─── Skills ─── */}
+      <FadeInSection>
       <section
         style={{
           marginTop: "var(--space-9)",
@@ -162,8 +164,10 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+      </FadeInSection>
 
       {/* ─── Contact ─── */}
+      <FadeInSection>
       <section
         style={{
           marginTop: "var(--space-9)",
@@ -207,6 +211,7 @@ export default function AboutPage() {
           </a>
         </p>
       </section>
+      </FadeInSection>
     </div>
   );
 }

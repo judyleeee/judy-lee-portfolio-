@@ -1,4 +1,5 @@
 import ProjectCard from "@/components/ProjectCard";
+import FadeInSection from "@/components/FadeInSection";
 import { visibleProjects } from "@/lib/projects";
 
 const impactItems = [
@@ -68,43 +69,45 @@ export default function HomeKR() {
       </header>
 
       {/* ─── Impact ─── */}
-      <div
-        className="mx-auto w-full grid grid-cols-2 md:grid-cols-4"
-        style={{
-          maxWidth: "var(--content-max-width)",
-          padding: "var(--space-7) var(--content-padding-x)",
-          borderBottom: "1px solid var(--color-border)",
-          gap: "var(--space-6)",
-        }}
-      >
-        {impactItems.map((item, i) => (
-          <div key={i}>
-            <span
-              className="block"
-              style={{
-                fontSize: "clamp(32px, 4vw, 48px)",
-                fontWeight: "var(--weight-light)",
-                letterSpacing: "var(--tracking-tight)",
-                color: "var(--color-text-primary)",
-                lineHeight: 1,
-              }}
-            >
-              {item.number}
-            </span>
-            <span
-              className="block whitespace-pre-line"
-              style={{
-                marginTop: "var(--space-2)",
-                fontSize: "var(--text-small)",
-                color: "var(--color-text-secondary)",
-                lineHeight: "var(--leading-normal)",
-              }}
-            >
-              {item.label}
-            </span>
-          </div>
-        ))}
-      </div>
+      <FadeInSection>
+        <div
+          className="mx-auto w-full grid grid-cols-2 md:grid-cols-4"
+          style={{
+            maxWidth: "var(--content-max-width)",
+            padding: "var(--space-7) var(--content-padding-x)",
+            borderBottom: "1px solid var(--color-border)",
+            gap: "var(--space-6)",
+          }}
+        >
+          {impactItems.map((item, i) => (
+            <div key={i}>
+              <span
+                className="block"
+                style={{
+                  fontSize: "clamp(32px, 4vw, 48px)",
+                  fontWeight: "var(--weight-light)",
+                  letterSpacing: "var(--tracking-tight)",
+                  color: "var(--color-text-primary)",
+                  lineHeight: 1,
+                }}
+              >
+                {item.number}
+              </span>
+              <span
+                className="block whitespace-pre-line"
+                style={{
+                  marginTop: "var(--space-2)",
+                  fontSize: "var(--text-small)",
+                  color: "var(--color-text-secondary)",
+                  lineHeight: "var(--leading-normal)",
+                }}
+              >
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </FadeInSection>
 
       {/* ─── Projects ─── */}
       <section
@@ -115,8 +118,10 @@ export default function HomeKR() {
         }}
       >
         <div className="flex flex-col">
-          {visibleProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} locale="kr" />
+          {visibleProjects.map((project, i) => (
+            <FadeInSection key={project.id} delay={i * 0.08}>
+              <ProjectCard project={project} locale="kr" />
+            </FadeInSection>
           ))}
         </div>
       </section>
