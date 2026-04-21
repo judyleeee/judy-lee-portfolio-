@@ -5,6 +5,21 @@
 
 ---
 
+## 🔗 작업 전에 먼저 참조할 문서
+
+외부 플레이북(옵시디언)에 상세 가이드가 있어요. 작업 유형별로 필요할 때 Read로 열어보세요.
+
+| 작업 유형 | 먼저 읽을 문서 |
+|---|---|
+| 이미지 교체 · 텍스트 수정 · 배포 | `/Users/judy/Desktop/obsi/judy_designer/04_리소스/구직-플레이북/6_운영-가이드.md` |
+| 새 케이스스터디 작성 | `/Users/judy/Desktop/obsi/judy_designer/04_리소스/구직-플레이북/4_케이스스터디-프레임워크.md` |
+| 문장 다듬기 · 번역 | `/Users/judy/Desktop/obsi/judy_designer/04_리소스/구직-플레이북/5_톤-가이드.md` |
+| 전체 구직 상황 파악 | `/Users/judy/Desktop/obsi/judy_designer/04_리소스/구직-플레이북/index.md` |
+
+**원칙**: 작업 시작 전에 관련 문서 1개만 Read로 열고 규칙 따라 작업.
+
+---
+
 ## 프로젝트 개요
 
 | 항목 | 내용 |
