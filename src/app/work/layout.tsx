@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NextCaseCard from "@/components/NextCaseCard";
 
 export default function WorkLayout({
   children,
@@ -8,13 +9,13 @@ export default function WorkLayout({
   return (
     <>
       {children}
+      <NextCaseCard />
       <div
         className="mx-auto w-full"
         style={{
           maxWidth: "var(--content-max-width)",
           padding:
-            "var(--space-8) var(--content-padding-x) var(--space-9)",
-          borderTop: "1px solid var(--color-border)",
+            "var(--space-6) var(--content-padding-x) var(--space-9)",
         }}
       >
         <Link
@@ -24,7 +25,7 @@ export default function WorkLayout({
             gap: "var(--space-2)",
             fontSize: "var(--text-small)",
             fontWeight: "var(--weight-medium)",
-            color: "var(--color-text-primary)",
+            color: "var(--color-text-secondary)",
           }}
         >
           ← Back to all projects
