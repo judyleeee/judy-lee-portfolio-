@@ -18,11 +18,55 @@ Samsung.com의 매뉴얼 & 다운로드 페이지는 전 세계 수백만 명이
 
 별도 UX 리서치 팀이 이탈을 만드는 구조적 불일치를 밝혀냈고 · 저는 이 발견을 디자인 의사결정으로 번역하는 일을 맡았습니다.
 
-<Callout>
-  시스템은 매뉴얼을 찾기 위해 <strong>제품 코드</strong>(예: SM-F721BLBGEUB)를 요구했습니다. 반면 사용자는 <strong>제품명</strong>을 기억하는 경우가 대부분이었고 · 때로는 <strong>카테고리명</strong>만 알고 찾아왔습니다. 사용자 언어와 시스템 구조 사이의 간극이 진짜 실패 지점이었습니다.
-</Callout>
+**시스템 언어와 사용자 언어의 간극 · 진짜 실패 지점:**
 
-이 간극은 제품군별로 더 깊게 갈라졌습니다. 모바일 사용자는 대개 제품명("Flip4", "A53")을 알고 직접 검색할 수 있었지만 · TV나 가전 사용자는 카테고리명("스마트 TV", "냉장고")만 쥐고 찾아왔습니다. 기존 UI는 이 두 유형 모두에게 선택을 안내하지 못했습니다.
+<div className="grid md:grid-cols-[1fr_auto_1fr] items-stretch" style={{ gap: 'var(--space-4)', margin: 'var(--space-6) 0', maxWidth: 920 }}>
+  <div style={{ padding: 'var(--space-5)', background: 'var(--color-bg-subtle)', borderRadius: 'var(--radius-sm)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+    <span className="uppercase" style={{ fontSize: 'var(--text-caption)', letterSpacing: 'var(--tracking-wide)', color: 'var(--color-text-tertiary)', fontWeight: 'var(--weight-medium)' }}>
+      시스템이 요구한 것
+    </span>
+    <div style={{ fontSize: 'var(--text-h2)', fontWeight: 'var(--weight-medium)', color: 'var(--color-text-secondary)', lineHeight: 'var(--leading-tight)' }}>
+      제품 코드
+    </div>
+    <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: 'var(--text-small)', color: 'var(--color-text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--color-bg)', borderRadius: 'var(--radius-sm)', alignSelf: 'flex-start', border: '1px solid var(--color-border)' }}>
+      SM-F721BLBGEUB
+    </div>
+  </div>
+
+  <div className="hidden md:flex items-center justify-center" style={{ padding: '0 var(--space-2)', fontSize: '32px', color: 'var(--color-text-tertiary)', lineHeight: 1, fontWeight: 200 }}>
+    ≠
+  </div>
+
+  <div style={{ padding: 'var(--space-5)', background: 'var(--color-text-primary)', color: 'var(--color-bg)', borderRadius: 'var(--radius-sm)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+    <span className="uppercase" style={{ fontSize: 'var(--text-caption)', letterSpacing: 'var(--tracking-wide)', opacity: 0.6, fontWeight: 'var(--weight-medium)' }}>
+      사용자가 실제로 아는 것
+    </span>
+    <div style={{ fontSize: 'var(--text-h2)', fontWeight: 'var(--weight-medium)', lineHeight: 'var(--leading-tight)' }}>
+      제품명 · 또는 카테고리만
+    </div>
+    <div style={{ fontSize: 'var(--text-small)', opacity: 0.85, lineHeight: 'var(--leading-loose)' }}>
+      "Flip4" · "A53"<br />
+      "스마트 TV" · "냉장고"
+    </div>
+  </div>
+</div>
+
+**두 사용자 층이 각기 다른 이유로 모두 실패했습니다 · 제품군에 따라 행동이 완전히 달랐습니다:**
+
+<PatternGrid
+  patterns={[
+    {
+      label: "모바일 사용자",
+      title: "제품명을 안다",
+      description: "'Flip4', 'A53' 같은 이름으로 바로 검색 · 하지만 비슷한 모델 사이에서 내 것을 구분할 수 없었습니다.",
+    },
+    {
+      label: "TV · 가전 사용자",
+      title: "카테고리만 기억한다",
+      description: "'스마트 TV', '냉장고' 같은 종류만 알고 옴 · 선택을 안내하는 경로가 없어 시작조차 어려웠습니다.",
+    },
+  ]}
+/>
 
 **반복적으로 나타난 네 가지 실패 모드**
 

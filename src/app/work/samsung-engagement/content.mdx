@@ -18,11 +18,55 @@ Most users were abandoning self-service and escalating to support. Every failed 
 
 A dedicated UX Research team surfaced the structural mismatch driving abandonment. I partnered with them to translate the findings into design decisions.
 
-<Callout>
-  The system required a <strong>product code</strong> (e.g. SM-F721BLBGEUB) to surface any manual. Users arrived knowing a <strong>product name</strong> at best · often only a <strong>category name</strong>. The gap between user vocabulary and system architecture was the real failure.
-</Callout>
+**The gap between system and user vocabulary · the real failure point:**
 
-This split ran deeper across product lines: mobile users typically arrived with a product name ("Flip4", "A53") and could search directly. TV and appliance users often arrived with only a category name ("Smart TV", "fridge"). The existing UI didn't provide a guided selection path. Both populations were failing, but for structurally different reasons.
+<div className="grid md:grid-cols-[1fr_auto_1fr] items-stretch" style={{ gap: 'var(--space-4)', margin: 'var(--space-6) 0', maxWidth: 920 }}>
+  <div style={{ padding: 'var(--space-5)', background: 'var(--color-bg-subtle)', borderRadius: 'var(--radius-sm)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+    <span className="uppercase" style={{ fontSize: 'var(--text-caption)', letterSpacing: 'var(--tracking-wide)', color: 'var(--color-text-tertiary)', fontWeight: 'var(--weight-medium)' }}>
+      What the system required
+    </span>
+    <div style={{ fontSize: 'var(--text-h2)', fontWeight: 'var(--weight-medium)', color: 'var(--color-text-secondary)', lineHeight: 'var(--leading-tight)' }}>
+      Product Code
+    </div>
+    <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: 'var(--text-small)', color: 'var(--color-text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--color-bg)', borderRadius: 'var(--radius-sm)', alignSelf: 'flex-start', border: '1px solid var(--color-border)' }}>
+      SM-F721BLBGEUB
+    </div>
+  </div>
+
+  <div className="hidden md:flex items-center justify-center" style={{ padding: '0 var(--space-2)', fontSize: '32px', color: 'var(--color-text-tertiary)', lineHeight: 1, fontWeight: 200 }}>
+    ≠
+  </div>
+
+  <div style={{ padding: 'var(--space-5)', background: 'var(--color-text-primary)', color: 'var(--color-bg)', borderRadius: 'var(--radius-sm)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+    <span className="uppercase" style={{ fontSize: 'var(--text-caption)', letterSpacing: 'var(--tracking-wide)', opacity: 0.6, fontWeight: 'var(--weight-medium)' }}>
+      What users actually knew
+    </span>
+    <div style={{ fontSize: 'var(--text-h2)', fontWeight: 'var(--weight-medium)', lineHeight: 'var(--leading-tight)' }}>
+      Product name, or just a category
+    </div>
+    <div style={{ fontSize: 'var(--text-small)', opacity: 0.85, lineHeight: 'var(--leading-loose)' }}>
+      "Flip4" · "A53"<br />
+      "Smart TV" · "fridge"
+    </div>
+  </div>
+</div>
+
+**Both populations failed · for structurally different reasons:**
+
+<PatternGrid
+  patterns={[
+    {
+      label: "Mobile users",
+      title: "Arrived with a product name",
+      description: "'Flip4', 'A53' · could search directly · but couldn't distinguish between near-identical variants at the selection moment.",
+    },
+    {
+      label: "TV · Appliance users",
+      title: "Arrived with only a category",
+      description: "'Smart TV', 'fridge' · no guided selection path · couldn't even start narrowing down to their specific model.",
+    },
+  ]}
+/>
 
 **Four recurring failure modes mapped to this gap:**
 
