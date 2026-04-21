@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NextCaseCard from "@/components/NextCaseCard";
+import CaseTOC from "@/components/CaseTOC";
 
 export default function WorkLayoutKR({
   children,
@@ -8,6 +9,7 @@ export default function WorkLayoutKR({
 }) {
   return (
     <>
+      <CaseTOC />
       {children}
       <NextCaseCard />
       <div
