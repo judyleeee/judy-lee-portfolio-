@@ -12,6 +12,8 @@ type Props = {
   ratio?: string;
   /** 이미지가 잘리지 않도록 contain(기본) · 화면 꽉 채우되 잘릴 수 있음은 cover */
   fit?: "contain" | "cover";
+  /** 특정 이미지만 고정 높이를 쓰고 싶을 때 (px). 지정 시 ratio 무시 */
+  height?: number;
 };
 
 export default function CaseImage({
@@ -21,6 +23,7 @@ export default function CaseImage({
   caption,
   ratio = "16 / 10",
   fit = "contain",
+  height,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,7 +59,8 @@ export default function CaseImage({
             cursor: "zoom-in",
             width: "100%",
             position: "relative",
-            aspectRatio: ratio,
+            aspectRatio: height ? undefined : ratio,
+            height: height ? `${height}px` : undefined,
             background: "var(--color-bg-subtle)",
             borderRadius: "var(--radius-sm)",
             overflow: "hidden",
