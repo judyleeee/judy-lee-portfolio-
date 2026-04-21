@@ -17,7 +17,7 @@ export default function Footer() {
       </span>
       <div className="flex" style={{ gap: "var(--space-5)" }}>
         <a
-          href="https://linkedin.com/in/judyleedesign"
+          href="https://www.linkedin.com/in/jihyun0719/"
           target="_blank"
           rel="noopener"
           className="transition-colors hover:text-[var(--color-text-primary)]"
