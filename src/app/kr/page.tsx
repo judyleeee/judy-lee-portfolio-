@@ -42,7 +42,7 @@ export default function HomeKR() {
             lineHeight: "var(--leading-tight)",
             letterSpacing: "var(--tracking-tight)",
             color: "var(--color-text-primary)",
-            maxWidth: 860,
+            maxWidth: 880,
           }}
         >
           7년 동안 비주얼에서 UX로 · 감각에서 데이터로 확장했습니다.
@@ -60,7 +60,7 @@ export default function HomeKR() {
             fontSize: "var(--text-body)",
             color: "var(--color-text-secondary)",
             lineHeight: "var(--leading-normal)",
-            maxWidth: 560,
+            maxWidth: 600,
           }}
         >
           Samsung과 Edelman에서 다져온 디자인 감각을 바탕으로 · 측정 가능한 임팩트를
