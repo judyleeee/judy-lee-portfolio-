@@ -61,7 +61,7 @@ export default function CaseImage({
             position: "relative",
             aspectRatio: height ? undefined : ratio,
             height: height ? `${height}px` : undefined,
-            background: "var(--color-bg-subtle)",
+            background: "var(--color-bg)",
             borderRadius: "var(--radius-sm)",
             overflow: "hidden",
           }}
