@@ -102,13 +102,7 @@
   --color-border-strong: var(--color-border-strong);
 }
 
-/* ─── Global Reset & Base ─── */
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ─── Global Base ─── */
 
 html {
   font-size: 16px;

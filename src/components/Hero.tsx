@@ -48,8 +48,8 @@ export default function Hero() {
           maxWidth: "600px",
         }}
       >
-        Product designer with craft DNA from Samsung and Edelman · building
-        AI-native product experiences with measurable impact.
+        Product designer with craft DNA from enterprise UX and global brand
+        work · building AI-native product experiences with measurable impact.
       </p>
     </header>
   );

@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Judy Lee · Product Designer",
   description:
-    "Product designer with craft DNA from Samsung and Edelman · building AI-native product experiences with measurable impact.",
+    "Product designer with craft DNA from enterprise UX and global brand work · building AI-native product experiences with measurable impact.",
 };
 
 export default function RootLayout({

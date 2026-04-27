@@ -7,18 +7,6 @@ export default function Nav() {
   const pathname = usePathname();
   const isKR = pathname?.startsWith("/kr") ?? false;
 
-  // Generate the counterpart path for the language toggle
-  const enPath = isKR
-    ? pathname === "/kr"
-      ? "/"
-      : pathname.replace(/^\/kr/, "")
-    : pathname;
-  const krPath = isKR
-    ? pathname
-    : pathname === "/"
-      ? "/kr"
-      : `/kr${pathname}`;
-
   const t = {
     about: isKR ? "어바웃" : "About",
     contact: isKR ? "연락" : "Contact",
@@ -56,47 +44,7 @@ export default function Nav() {
           className="flex items-center"
           style={{ gap: "var(--space-5)" }}
         >
-          {/* Language toggle */}
-          <div
-            className="inline-flex items-center"
-            style={{ gap: "var(--space-2)" }}
-          >
-            <Link
-              href={enPath || "/"}
-              style={{
-                fontSize: "var(--text-small)",
-                fontWeight: "var(--weight-medium)",
-                color: !isKR
-                  ? "var(--color-text-primary)"
-                  : "var(--color-text-tertiary)",
-                transition: "color var(--transition-fast)",
-              }}
-            >
-              EN
-            </Link>
-            <span
-              style={{
-                fontSize: "var(--text-small)",
-                color: "var(--color-text-tertiary)",
-                userSelect: "none",
-              }}
-            >
-              ·
-            </span>
-            <Link
-              href={krPath}
-              style={{
-                fontSize: "var(--text-small)",
-                fontWeight: "var(--weight-medium)",
-                color: isKR
-                  ? "var(--color-text-primary)"
-                  : "var(--color-text-tertiary)",
-                transition: "color var(--transition-fast)",
-              }}
-            >
-              KR
-            </Link>
-          </div>
+          {/* Language toggle hidden — KR temporarily disabled */}
 
           <Link
             href={isKR ? "/kr/about" : "/about"}
@@ -110,7 +58,9 @@ export default function Nav() {
             {t.about}
           </Link>
           <a
-            href="mailto:jihyunlee719@gmail.com"
+            href="https://www.linkedin.com/in/jihyun0719/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="transition-colors hover:text-[var(--color-text-primary)]"
             style={{
               fontSize: "var(--text-small)",
