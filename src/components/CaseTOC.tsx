@@ -1,29 +1,39 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 type Section = { id: string; label: string };
 
 export default function CaseTOC() {
+  const pathname = usePathname();
   const [sections, setSections] = useState<Section[]>([]);
   const [active, setActive] = useState<string>("");
 
-  // Discover H2 sections from rendered article
+  // Re-discover H2 sections whenever the route changes
   useEffect(() => {
-    const article = document.querySelector("article");
-    if (!article) return;
+    setSections([]);
+    setActive("");
 
-    const h2s = article.querySelectorAll("h2");
-    const discovered: Section[] = Array.from(h2s)
-      .filter((h) => h.id)
-      .map((h) => ({
-        id: h.id,
-        label: h.textContent?.split("·")[0].trim() || h.textContent || "",
-      }));
+    // Wait one frame so the new <article> from the child route is in the DOM
+    const raf = requestAnimationFrame(() => {
+      const article = document.querySelector("article");
+      if (!article) return;
 
-    setSections(discovered);
-    if (discovered.length > 0) setActive(discovered[0].id);
-  }, []);
+      const h2s = article.querySelectorAll("h2");
+      const discovered: Section[] = Array.from(h2s)
+        .filter((h) => h.id)
+        .map((h) => ({
+          id: h.id,
+          label: h.textContent?.split("·")[0].trim() || h.textContent || "",
+        }));
+
+      setSections(discovered);
+      if (discovered.length > 0) setActive(discovered[0].id);
+    });
+
+    return () => cancelAnimationFrame(raf);
+  }, [pathname]);
 
   // Observe scroll position and update active
   useEffect(() => {

@@ -20,8 +20,8 @@ export default function ProjectCard({ project, locale = "en" }: Props) {
 
   const labels =
     locale === "kr"
-      ? { role: "역할", context: "맥락", timeline: "기간", tags: "태그", cta: "케이스스터디 보기 →" }
-      : { role: "Role", context: "Context", timeline: "Timeline", tags: "Tags", cta: "View Case Study →" };
+      ? { role: "역할", context: "맥락", timeline: "기간", tags: "태그", cta: "케이스스터디 보기" }
+      : { role: "Role", context: "Context", timeline: "Timeline", tags: "Tags", cta: "View Case Study" };
 
   const basePath = locale === "kr" ? "/kr/work" : "/work";
 
@@ -160,18 +160,14 @@ export default function ProjectCard({ project, locale = "en" }: Props) {
 
         <Link
           href={`${basePath}/${project.caseStudySlug}`}
-          className="inline-flex items-center self-start transition-opacity hover:opacity-50"
+          className="cta-link self-start"
           style={{
-            gap: "var(--space-2)",
             marginTop: "var(--space-5)",
             fontSize: "var(--text-small)",
             fontWeight: "var(--weight-medium)",
-            color: "var(--color-text-primary)",
-            borderBottom: "1px solid var(--color-text-primary)",
-            paddingBottom: 2,
           }}
         >
-          {labels.cta}
+          {labels.cta} <span className="cta-link-arrow">→</span>
         </Link>
       </div>
 
